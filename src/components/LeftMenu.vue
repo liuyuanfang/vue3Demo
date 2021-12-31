@@ -2,9 +2,11 @@
   <el-row class="tac">
     <el-col>
       <el-menu
-        router="true"
-        @open="handleOpen"
-        @close="handleClose"
+        default-activ="1"
+        router
+        unique-opened
+        @open="handleOpen()"
+        @close="handleClose()"
         v-for="(item, index) in menuData"
         :key="item.menuName"
       >
@@ -30,7 +32,7 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "LeftMenu",
   setup() {
     const handleOpen = (key, keyPath) => {
       console.log(key, keyPath);
